@@ -1,0 +1,141 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+* {
+    font-family: Inter, Arial, sans-serif;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0px 30px 0px 30px;
+    background: rgb(212, 212, 212);
+}
+
+nav a {
+    font-size: 18px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin: 30px;
+    padding: 20px;
+}
+
+.items {
+    border: 2px solid rgb(212, 212, 212);
+    border-radius: 10px;
+    width: 50%;
+}
+
+.items h2{
+    text-align: center;
+    margin: 0px 0px 30px 0px;
+    background: rgb(212, 212, 212);
+    padding: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"], input[type="url"] {
+    height: 30px;
+    border: 2px solid rgb(212, 212, 212);
+    border-radius: 5px;
+}
+
+#file-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 35px;
+    margin: 15px 30%;
+    background: rgb(45, 153, 255);
+    color: white;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
+    margin: 20px 0px 20px 0px;
+    height: 35px;
+    background: rgb(45, 153, 255);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+.codes {
+    margin: 30px;
+    padding: 20px;
+    width: 10%;
+}
+
+.show-url {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.url {
+    border: 2px solid rgb(212, 212, 212);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#msgs {
+    color: rgb(230, 103, 103);
+    text-align: center;
+}
+
+.pagenotfound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 780px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .items {
+        width: 90%;
+    }
+
+    #file-label {
+        width: 70%;
+        margin: 15px 15%;
+    }
+
+    .codes {
+        margin-left: 35%;
+        margin-right: 35%;
+    }
+}

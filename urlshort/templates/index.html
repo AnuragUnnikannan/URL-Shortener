@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}URL Shortener{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="items">
+        <h2>Website</h2>
+        <form action="your-url" method="POST">
+            <label for="url">Website URL</label>
+            <input type="url" name="url" id="url" required>
+            <label for="code">Short Name</label>
+            <input type="text" name="code" id="code" required>
+            <button type="submit">Shorten</button>
+        </form>
+    </div>
+    
+    <div class="items">
+        <h2>File</h2>
+        <form action="your-url" method="POST" enctype="multipart/form-data">
+            <label for="file" id="file-label">
+                <input type="file" name="file" id="file" required>
+                Upload File
+            </label>
+            <label for="code">Short Name</label>
+            <input type="text" name="code" id="code" required>
+            <button type="submit">Shorten</button>
+        </form>
+    </div>
+    
+</div>
+
+
+{% for i in get_flashed_messages() %}
+    <p id="msgs">{{ i }}</p>
+{% endfor %}
+
+{% if url %}
+    <div class="show-url">
+        <h3>Your URL</h3>
+        <div class="url">
+            {{ url }}
+        </div>
+    </div>
+{% endif %}
+
+<div class="codes">
+    {% if codes %}
+        <h3>Codes</h3>
+        {% for i in codes %}
+            <a href="{{ url_for('urlshort.gotourl', code=i) }}">{{ i }}</a>
+            <br>
+        {% endfor %}
+    {% endif %}
+</div>
+{% endblock %}

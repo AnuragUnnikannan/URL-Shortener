@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Your URL{% endblock %}
+
+{% block main %}
+    <div class="show-url">
+        <h3>Your URL</h3>
+        <div class="url">
+            {{ url }}
+        </div>
+        <button type="button" id="copy">Copy</button>
+    </div>
+    
+{% endblock %}
